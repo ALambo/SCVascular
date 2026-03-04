@@ -1,0 +1,2462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vascular Surgery & Vein Health | Springfield Clinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ── Springfield Clinic Brand Colors ── */
+    :root {
+      --sc-blue:   #093b60;
+      --sc-green:  #00645d;
+      --sc-yellow: #fdbd3d;
+      --sc-gray:   #4a4a4a;
+      --sc-light:  #f5f7f8;
+      --sc-white:  #ffffff;
+      --radius:    8px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--sc-gray);
+      background: #fff;
+      line-height: 1.65;
+    }
+
+    h1, h2, h3, .section-title {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* ── TOP BAR ── */
+    .top-bar {
+      background: var(--sc-blue);
+      color: #fff;
+      padding: 8px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+    }
+    .top-bar a { color: var(--sc-yellow); text-decoration: none; font-weight: 600; }
+    .top-bar a:hover { text-decoration: underline; }
+    .top-bar-left { display: flex; align-items: center; gap: 6px; }
+
+    /* ── HEADER / NAV ── */
+    header {
+      background: #fff;
+      border-bottom: 2px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 12px rgba(9,59,96,0.07);
+    }
+    .header-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 12px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-wrap img { height: 52px; }
+    .logo-text { line-height: 1.2; }
+    .logo-text .dept { font-size: 1.1rem; font-weight: 700; color: var(--sc-blue); font-family: 'Playfair Display', serif; }
+    .logo-text .sub  { font-size: 0.75rem; color: var(--sc-green); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
+
+    nav { display: flex; gap: 2px; flex-wrap: wrap; align-items: center; }
+    nav a {
+      padding: 8px 13px;
+      text-decoration: none;
+      color: var(--sc-blue);
+      font-weight: 600;
+      font-size: 0.84rem;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    nav a:hover { color: var(--sc-green); border-bottom-color: var(--sc-green); }
+
+    .btn {
+      display: inline-block;
+      background: var(--sc-green);
+      color: #fff;
+      padding: 11px 22px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.88rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.01em;
+    }
+    .btn:hover { background: #004d47; transform: translateY(-1px); }
+    .btn-yellow { background: var(--sc-yellow); color: var(--sc-blue); }
+    .btn-yellow:hover { background: #e5a820; }
+    .btn-blue { background: var(--sc-blue); color: #fff; }
+    .btn-blue:hover { background: #0a4c6f; }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.15); transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 620px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(105deg, rgba(9,59,96,0.92) 35%, rgba(0,100,93,0.55) 70%, rgba(9,59,96,0.2) 100%),
+        url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=85') center/cover no-repeat;
+    }
+    .hero-content {
+      position: relative;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 40px;
+      width: 100%;
+    }
+    .hero-text { max-width: 620px; color: #fff; }
+    .hero-content .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--sc-yellow);
+      color: var(--sc-blue);
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 18px;
+      font-family: 'Playfair Display', serif;
+    }
+    .hero-content p {
+      font-size: 1.08rem;
+      opacity: 0.92;
+      margin-bottom: 30px;
+      max-width: 520px;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 44px;
+      flex-wrap: wrap;
+    }
+    .hero-stat { color: #fff; }
+    .hero-stat .num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--sc-yellow);
+      line-height: 1;
+      font-family: 'Playfair Display', serif;
+    }
+    .hero-stat .lbl {
+      font-size: 0.78rem;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── SECTION STYLES ── */
+    section { padding: 80px 40px; }
+    .section-inner { max-width: 1240px; margin: 0 auto; }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--sc-blue);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .section-sub {
+      color: var(--sc-green);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .divider {
+      width: 56px;
+      height: 4px;
+      background: var(--sc-yellow);
+      border-radius: 2px;
+      margin: 12px 0 36px;
+    }
+
+    /* ── INTRO BANNER (replaces generic why section header) ── */
+    .intro-band {
+      background: linear-gradient(135deg, var(--sc-blue) 0%, #0a4c6f 100%);
+      color: #fff;
+      padding: 32px 40px;
+      text-align: center;
+    }
+    .intro-band-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      opacity: 0.92;
+      line-height: 1.75;
+    }
+    .intro-band-inner strong { color: var(--sc-yellow); }
+
+    /* ── TWO-DEPT CARDS ── */
+    .dept-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .dept-card {
+      padding: 56px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .dept-card.surgery { background: var(--sc-light); }
+    .dept-card.medicine { background: #e8f5f4; }
+    .dept-card .dept-icon {
+      width: 60px; height: 60px;
+      background: linear-gradient(135deg, var(--sc-blue), var(--sc-green));
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .dept-card .dept-icon svg { color: #fff; }
+    .dept-card h3 {
+      font-size: 1.5rem; font-weight: 800;
+      color: var(--sc-blue); margin-bottom: 12px;
+      font-family: 'Playfair Display', serif;
+    }
+    .dept-card p { font-size: 0.93rem; line-height: 1.75; margin-bottom: 20px; }
+    .dept-card ul { padding-left: 0; list-style: none; margin-bottom: 24px; }
+    .dept-card ul li {
+      padding: 5px 0;
+      font-size: 0.88rem;
+      padding-left: 18px;
+      position: relative;
+    }
+    .dept-card ul li::before {
+      content: '→';
+      position: absolute; left: 0;
+      color: var(--sc-green); font-weight: 700;
+    }
+    .dept-divider {
+      width: 2px;
+      background: linear-gradient(to bottom, transparent, var(--sc-green), transparent);
+      align-self: stretch;
+    }
+
+    /* ── WHY CARDS ── */
+    .why-section { background: #fff; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 8px;
+    }
+    .why-card {
+      background: var(--sc-light);
+      border-radius: 14px;
+      padding: 28px 24px;
+      border-top: 4px solid var(--sc-green);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .why-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.1); transform: translateY(-3px); }
+    .why-icon {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--sc-blue), var(--sc-green));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .why-icon svg { color: #fff; }
+    .why-card h4 { font-size: 1rem; font-weight: 700; color: var(--sc-blue); margin-bottom: 8px; }
+    .why-card p { font-size: 0.85rem; line-height: 1.65; }
+
+    /* ── LIFESTYLE GALLERY ── */
+    .lifestyle-section { background: var(--sc-blue); padding-bottom: 0; }
+    .lifestyle-section .section-title { color: #fff; }
+    .lifestyle-section .section-sub { color: rgba(255,255,255,0.7); }
+    .lifestyle-section .divider { background: var(--sc-yellow); }
+    .lifestyle-section p { color: rgba(255,255,255,0.85); margin-bottom: 36px; max-width: 580px; }
+    .lifestyle-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 220px 220px;
+      gap: 0;
+    }
+    .lifestyle-card {
+      overflow: hidden;
+      position: relative;
+    }
+    .lifestyle-card.tall { grid-row: span 2; }
+    .lifestyle-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .lifestyle-card:hover img { transform: scale(1.05); }
+    .lifestyle-card .caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(9,59,96,0.88));
+      color: #fff;
+      padding: 32px 16px 14px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .lifestyle-card:hover .caption { opacity: 1; }
+
+    /* ── CONDITIONS TABS ── */
+    .tabs-section { background: var(--sc-light); }
+    .tabs-wrap { margin-top: 8px; }
+    .tab-btns {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      border-bottom: 3px solid #dde4ec;
+      margin-bottom: 36px;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -3px;
+      padding: 11px 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--sc-gray);
+      cursor: pointer;
+      border-radius: 6px 6px 0 0;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+      white-space: nowrap;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .tab-btn:hover { color: var(--sc-green); background: rgba(0,100,93,0.06); }
+    .tab-btn.active { color: var(--sc-green); border-bottom-color: var(--sc-green); background: rgba(0,100,93,0.07); }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .tab-panel img {
+      width: 100%; border-radius: 14px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+      object-fit: cover;
+      height: 360px;
+    }
+    .tab-panel .tab-text h3 {
+      font-size: 1.6rem; font-weight: 900;
+      color: var(--sc-blue); margin-bottom: 14px;
+      font-family: 'Playfair Display', serif;
+      line-height: 1.2;
+    }
+    .tab-panel .tab-text p { margin-bottom: 14px; line-height: 1.75; font-size: 0.93rem; }
+    .tab-panel .tab-text ul { padding-left: 0; margin-bottom: 20px; list-style: none; }
+    .tab-panel .tab-text ul li {
+      padding: 6px 0 6px 20px;
+      position: relative;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #eee;
+    }
+    .tab-panel .tab-text ul li::before {
+      content: '✓';
+      position: absolute; left: 0;
+      color: var(--sc-green); font-weight: 700;
+    }
+    .benefit-pill {
+      display: inline-block;
+      background: rgba(0,100,93,0.1);
+      color: var(--sc-green);
+      font-weight: 700;
+      font-size: 0.78rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin: 3px 3px 3px 0;
+      border: 1px solid rgba(0,100,93,0.2);
+    }
+
+    /* ── VEIN HEALTH SPOTLIGHT ── */
+    .vein-spotlight {
+      background: #fff;
+    }
+    .vein-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .vein-two-col img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      object-fit: cover;
+      height: 420px;
+    }
+    .vein-info h3 {
+      font-size: 1.4rem;
+      color: var(--sc-blue);
+      font-weight: 800;
+      margin: 24px 0 10px;
+      font-family: 'Playfair Display', serif;
+    }
+    .vein-info h3:first-child { margin-top: 0; }
+    .vein-info p { font-size: 0.91rem; line-height: 1.75; margin-bottom: 10px; }
+    .vein-info ul { padding-left: 0; list-style: none; margin-bottom: 14px; }
+    .vein-info ul li {
+      padding: 4px 0 4px 18px;
+      position: relative;
+      font-size: 0.89rem;
+    }
+    .vein-info ul li::before { content: '•'; position: absolute; left: 0; color: var(--sc-green); font-weight: 900; }
+    .risk-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 12px 0 20px;
+    }
+    .risk-item {
+      background: var(--sc-light);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--sc-blue);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .risk-item::before { content: '⚠'; font-size: 0.9rem; }
+
+    /* ── TREATMENT OPTIONS CARDS ── */
+    .treatments-section { background: var(--sc-light); }
+    .treatments-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 10px;
+    }
+    .treatment-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-top: 4px solid transparent;
+    }
+    .treatment-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+      border-top-color: var(--sc-green);
+    }
+    .treatment-card .t-icon {
+      font-size: 1.8rem;
+      margin-bottom: 14px;
+    }
+    .treatment-card h4 {
+      font-weight: 800; color: var(--sc-blue);
+      font-size: 1rem; margin-bottom: 8px;
+    }
+    .treatment-card p { font-size: 0.85rem; line-height: 1.65; color: var(--sc-gray); }
+    .treatment-card .t-badge {
+      display: inline-block;
+      margin-top: 12px;
+      background: rgba(0,100,93,0.1);
+      color: var(--sc-green);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    /* ── ASSESSMENT HUB ── */
+    .assess-tabs {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .assess-tab {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 16px 24px;
+      background: rgba(255,255,255,0.09);
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      color: rgba(255,255,255,0.75);
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+      min-width: 130px;
+      flex: 1;
+    }
+    .assess-tab:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.4); color: #fff; }
+    .assess-tab.active { background: var(--sc-yellow); border-color: var(--sc-yellow); color: var(--sc-blue); }
+    .assess-icon { font-size: 1.8rem; }
+    .assess-label { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.3px; }
+
+    .assess-panel { display: none; }
+    .assess-panel.active { display: block; }
+
+    /* quiz card header */
+    .quiz-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .qc-icon { font-size: 2rem; }
+    .qc-title { font-weight: 800; font-size: 1.1rem; color: #fff; }
+    .qc-sub { font-size: 0.8rem; opacity: 0.65; margin-top: 2px; }
+    .quiz-result-panel { display: none; text-align: center; padding: 10px 0; }
+
+    /* ── PAD GAME ── */
+    .pad-game-wrap {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 28px;
+      align-items: start;
+    }
+    .pad-game-left {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 16px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .pad-game-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    /* Walking track */
+    .pad-track { margin-bottom: 20px; }
+    .pad-track-bg {
+      background: linear-gradient(to bottom, #1a6b4a 0%, #2d8f5f 30%, #8B7355 60%, #6b5533 100%);
+      border-radius: 12px;
+      height: 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .pad-road {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 38px;
+      background: #555;
+    }
+    .pad-road-line {
+      position: absolute;
+      top: 50%;
+      left: 0; right: 0;
+      height: 3px;
+      background: repeating-linear-gradient(90deg, #fdbd3d 0px, #fdbd3d 30px, transparent 30px, transparent 60px);
+      transform: translateY(-50%);
+    }
+    .pad-distance-markers {
+      position: absolute;
+      bottom: 6px;
+      left: 0; right: 0;
+      height: 16px;
+    }
+    .d-marker {
+      position: absolute;
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.8);
+      font-weight: 700;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+    .pad-checkpoints {
+      position: absolute;
+      top: 8px;
+      left: 0; right: 0;
+    }
+    .pad-cp {
+      position: absolute;
+      font-size: 1.2rem;
+      transform: translateX(-50%);
+      transition: opacity 0.3s;
+      cursor: default;
+    }
+    .pad-cp.passed { opacity: 0.25; }
+    .pad-walker {
+      position: absolute;
+      bottom: 6px;
+      font-size: 1.6rem;
+      left: 2%;
+      transition: left 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    }
+    .pad-finish {
+      position: absolute;
+      bottom: 4px;
+      font-size: 1.4rem;
+    }
+
+    .pad-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .pad-step-btn {
+      background: var(--sc-yellow);
+      color: var(--sc-blue);
+      border: none;
+      border-radius: 50px;
+      padding: 13px 28px;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: background 0.2s, transform 0.1s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .pad-step-btn:hover { background: #e5a820; transform: scale(1.04); }
+    .pad-step-btn:active { transform: scale(0.97); }
+    .pad-step-btn:disabled { background: rgba(255,255,255,0.2); color: rgba(255,255,255,0.5); cursor: not-allowed; transform: none; }
+    .pad-meter { flex: 1; }
+    .pad-meter-bar {
+      background: rgba(255,255,255,0.2);
+      border-radius: 8px;
+      height: 12px;
+      margin-bottom: 5px;
+      overflow: hidden;
+    }
+    .pad-meter-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #00c851, #fdbd3d, #e74c3c);
+      border-radius: 8px;
+      width: 0%;
+      transition: width 0.5s ease;
+    }
+    .pad-meter-label {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.7);
+      text-align: right;
+      font-weight: 600;
+    }
+
+    /* Checkpoint question overlay */
+    .pad-cp-question {
+      background: rgba(9,59,96,0.97);
+      border: 2px solid var(--sc-yellow);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-bottom: 16px;
+      animation: cpSlideIn 0.3s ease;
+    }
+    @keyframes cpSlideIn { from { opacity:0; transform:translateY(-10px); } to { opacity:1; transform:translateY(0); } }
+    .pad-cp-icon {
+      font-weight: 800;
+      color: var(--sc-yellow);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .pad-cp-qtext {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 14px;
+      line-height: 1.45;
+    }
+    .pad-cp-answers {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .pad-cp-ans {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #fff;
+      padding: 11px 16px;
+      border-radius: 8px;
+      text-align: left;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-family: 'DM Sans', sans-serif;
+      transition: background 0.2s;
+    }
+    .pad-cp-ans:hover { background: rgba(253,189,61,0.3); border-color: var(--sc-yellow); }
+    .pad-cp-ans.high-risk { border-color: #e74c3c; }
+
+    .pad-result {
+      text-align: center;
+      padding: 10px 0;
+      animation: cpSlideIn 0.4s ease;
+    }
+    .pad-result-emoji { font-size: 3.5rem; margin-bottom: 8px; }
+    .pad-result-dist {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--sc-yellow);
+      font-family: 'Playfair Display', serif;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    /* PAD info panel */
+    .pad-game-info {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 16px;
+      padding: 24px 22px;
+      color: #fff;
+    }
+    .pad-game-info h4 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
+    }
+    .pad-game-info p { font-size: 0.86rem; opacity: 0.85; line-height: 1.65; margin-bottom: 16px; }
+    .pad-stat-box {
+      background: var(--sc-yellow);
+      color: var(--sc-blue);
+      border-radius: 10px;
+      padding: 14px 16px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .pad-stat-num { font-size: 2rem; font-weight: 900; font-family: 'Playfair Display', serif; line-height: 1; }
+    .pad-stat-lbl { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+    .pad-warning-signs {
+      background: rgba(231,76,60,0.15);
+      border: 1px solid rgba(231,76,60,0.3);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+    }
+    .pad-warn-title { font-weight: 800; font-size: 0.88rem; color: #ff8a80; margin-bottom: 8px; }
+    .pad-warning-signs ul { list-style: none; padding: 0; }
+    .pad-warning-signs ul li {
+      font-size: 0.82rem;
+      padding: 3px 0 3px 14px;
+      position: relative;
+      opacity: 0.9;
+    }
+    .pad-warning-signs ul li::before { content: '•'; position: absolute; left: 0; color: #ff8a80; }
+    .pad-fact-box {
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 0.82rem;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .pad-game-wrap { grid-template-columns: 1fr; }
+      .assess-tab { min-width: 110px; padding: 12px 14px; }
+    }
+
+    /* ── QUIZ ── */
+    .quiz-section { background: var(--sc-blue); color: #fff; }
+    .quiz-section .section-title { color: #fff; }
+    .quiz-section .divider { background: var(--sc-yellow); }
+    .quiz-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .quiz-progress-bar {
+      background: rgba(255,255,255,0.18);
+      border-radius: 10px;
+      height: 8px;
+      margin-bottom: 30px;
+    }
+    .quiz-progress-fill {
+      height: 100%;
+      background: var(--sc-yellow);
+      border-radius: 10px;
+      transition: width 0.4s ease;
+      width: 0%;
+    }
+    .quiz-question { font-size: 1.15rem; font-weight: 700; margin-bottom: 22px; line-height: 1.5; }
+    .quiz-answers { display: flex; flex-direction: column; gap: 10px; }
+    .quiz-ans-btn {
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #fff;
+      padding: 13px 20px;
+      border-radius: 8px;
+      text-align: left;
+      cursor: pointer;
+      font-size: 0.93rem;
+      transition: background 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .quiz-ans-btn:hover { background: rgba(255,255,255,0.2); }
+    .quiz-ans-btn.selected { background: var(--sc-yellow); color: var(--sc-blue); border-color: var(--sc-yellow); font-weight: 700; }
+    .quiz-nav { display: flex; justify-content: space-between; margin-top: 26px; }
+    .quiz-nav button {
+      padding: 11px 28px; border-radius: 8px; border: none;
+      cursor: pointer; font-weight: 700; font-size: 0.9rem;
+      font-family: 'DM Sans', sans-serif;
+    }
+    #quizPrev { background: rgba(255,255,255,0.15); color: #fff; }
+    #quizPrev:hover { background: rgba(255,255,255,0.25); }
+    #quizNext { background: var(--sc-yellow); color: var(--sc-blue); }
+    #quizNext:hover { background: #e5a820; }
+    .quiz-counter { color: rgba(255,255,255,0.55); font-size: 0.82rem; margin-top: 14px; text-align: right; }
+    #quizResult { display: none; text-align: center; padding: 10px 0; }
+    .result-score { font-size: 4rem; font-weight: 900; color: var(--sc-yellow); line-height: 1; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
+    .result-label { font-size: 1.4rem; font-weight: 700; margin-bottom: 14px; }
+    .result-msg { opacity: 0.9; margin-bottom: 26px; line-height: 1.7; max-width: 580px; margin-left: auto; margin-right: auto; }
+
+    /* ── TEAM ── */
+    .team-section { background: #fff; }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 24px;
+      margin-top: 8px;
+    }
+    .team-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .team-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+    .team-card img {
+      width: 100%; height: 210px;
+      object-fit: cover; object-position: top;
+    }
+    .team-card .card-body { padding: 18px 16px 22px; }
+    .team-card .name { font-weight: 800; color: var(--sc-blue); font-size: 0.97rem; margin-bottom: 4px; }
+    .team-card .dept-tag {
+      display: inline-block;
+      background: rgba(0,100,93,0.1);
+      color: var(--sc-green);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .team-card .specialty { font-size: 0.79rem; color: var(--sc-gray); line-height: 1.5; }
+    .accepting { font-size: 0.75rem; color: var(--sc-green); font-weight: 700; margin-top: 10px; }
+
+    /* ── LOCATIONS ── */
+    .locations-section { background: var(--sc-light); }
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .location-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      border-left: 4px solid var(--sc-green);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .location-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); transform: translateY(-2px); }
+    .location-card h4 { font-weight: 700; color: var(--sc-blue); font-size: 0.95rem; margin-bottom: 6px; }
+    .location-card p { font-size: 0.83rem; color: var(--sc-gray); margin-bottom: 4px; line-height: 1.5; }
+    .location-card a { font-size: 0.83rem; color: var(--sc-green); font-weight: 700; text-decoration: none; }
+    .location-card a:hover { text-decoration: underline; }
+    .location-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .tag-surgery { background: rgba(9,59,96,0.1); color: var(--sc-blue); }
+    .tag-medicine { background: rgba(0,100,93,0.1); color: var(--sc-green); }
+    .tag-vein { background: rgba(253,189,61,0.2); color: #7a5800; }
+    .tag-both { background: rgba(9,59,96,0.07); color: var(--sc-blue); }
+
+    /* ── APPOINTMENT ── */
+    .appt-section { background: var(--sc-green); color: #fff; }
+    .appt-section .section-title { color: #fff; }
+    .appt-section .divider { background: var(--sc-yellow); }
+    .appt-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .appt-info p { opacity: 0.9; margin-bottom: 18px; line-height: 1.75; font-size: 0.95rem; }
+    .contact-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      margin-bottom: 14px; font-size: 0.93rem;
+    }
+    .contact-item svg { flex-shrink: 0; margin-top: 2px; }
+    .appt-form {
+      background: rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 34px 30px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .appt-form h3 { font-size: 1.3rem; margin-bottom: 24px; font-family: 'Playfair Display', serif; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block; font-size: 0.8rem;
+      font-weight: 700; margin-bottom: 5px;
+      opacity: 0.9; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 7px;
+      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.5); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--sc-yellow); }
+    .form-group select option { color: #333; background: #fff; }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .form-submit { width: 100%; margin-top: 6px; font-size: 1rem; padding: 14px; }
+    .form-success {
+      display: none;
+      background: rgba(255,255,255,0.15);
+      border-radius: 10px;
+      padding: 28px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    /* ── URGENT CALLOUT ── */
+    .urgent-box {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-top: 24px;
+    }
+    .urgent-box .u-title {
+      font-weight: 800; font-size: 0.95rem; margin-bottom: 8px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .urgent-box p { font-size: 0.86rem; opacity: 0.9; line-height: 1.65; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--sc-blue);
+      color: rgba(255,255,255,0.78);
+      padding: 60px 40px 24px;
+    }
+    .footer-inner { max-width: 1240px; margin: 0 auto; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 44px;
+      margin-bottom: 44px;
+    }
+    .footer-brand { }
+    .footer-brand .brand-name {
+      color: #fff; font-size: 1.1rem; font-weight: 800;
+      margin-bottom: 6px;
+      font-family: 'Playfair Display', serif;
+    }
+    .footer-brand .brand-sub {
+      font-size: 0.8rem; color: var(--sc-yellow);
+      font-weight: 600; letter-spacing: 0.5px;
+      text-transform: uppercase; margin-bottom: 14px;
+    }
+    .footer-brand p { font-size: 0.84rem; line-height: 1.7; }
+    footer h5 {
+      color: #fff; font-size: 0.82rem;
+      font-weight: 800; margin-bottom: 16px;
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+    footer ul { list-style: none; }
+    footer ul li { margin-bottom: 9px; }
+    footer ul li a {
+      color: rgba(255,255,255,0.68);
+      text-decoration: none;
+      font-size: 0.84rem;
+      transition: color 0.2s;
+    }
+    footer ul li a:hover { color: var(--sc-yellow); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.55); text-decoration: none; margin: 0 8px; }
+    .footer-bottom a:hover { color: var(--sc-yellow); }
+
+    /* ── STICKY CTA ── */
+    .sticky-cta {
+      position: fixed;
+      bottom: 20px; right: 24px;
+      z-index: 900;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-end;
+    }
+    .sticky-cta a {
+      display: flex; align-items: center; gap: 8px;
+      padding: 11px 18px;
+      border-radius: 50px;
+      font-weight: 700; font-size: 0.84rem;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.22);
+      transition: transform 0.2s;
+    }
+    .sticky-cta a:hover { transform: scale(1.05); }
+
+    /* ── SCROLL ANIMATION ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1000px) {
+      .dept-cards { grid-template-columns: 1fr; }
+      .dept-divider { display: none; }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .lifestyle-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+      .lifestyle-card.tall { grid-row: span 1; }
+      .tab-panel.active { grid-template-columns: 1fr; }
+      .vein-two-col { grid-template-columns: 1fr; }
+      .treatments-grid { grid-template-columns: repeat(2, 1fr); }
+      .appt-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 680px) {
+      section { padding: 52px 20px; }
+      .header-inner { padding: 10px 16px; }
+      nav { display: none; }
+      .hero { height: 500px; }
+      .hero-content h1 { font-size: 2rem; }
+      .hero-stats { gap: 20px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .lifestyle-grid { grid-template-columns: 1fr; }
+      .treatments-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .top-bar { flex-direction: column; gap: 6px; padding: 8px 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── TOP BAR ── -->
+<div class="top-bar">
+  <span class="top-bar-left">
+    <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+    800 North 1st Street, Floor 4 · Springfield, IL 62702
+  </span>
+  <span>
+    <a href="tel:2175287541">📞 217-528-7541</a> &nbsp;|&nbsp;
+    <a href="tel:2172809156">Vein Clinic: 217-280-9156</a> &nbsp;|&nbsp;
+    <a href="#appointment">Request Appointment</a> &nbsp;|&nbsp;
+    <a href="https://28977-1.portal.athenahealth.com/" target="_blank">Patient Portal</a>
+  </span>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="header-inner">
+    <a class="logo-wrap" href="#">
+      <img src="https://www.springfieldclinic.com/images/logo.gif"
+           onerror="this.style.display='none'"
+           alt="Springfield Clinic" />
+      <div class="logo-text">
+        <div class="dept">Springfield Clinic</div>
+        <div class="sub">Vascular Surgery · Vein Health · Vascular Medicine</div>
+      </div>
+    </a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#procedures">Procedures</a>
+      <a href="#vein">Vein Health</a>
+      <a href="#treatments">Treatments</a>
+      <a href="#team">Our Team</a>
+      <a href="#locations">Locations</a>
+      <a href="#assessments">Risk Assessments</a>
+      <a href="#appointment" class="btn">Request Appointment</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero" style="padding:0">
+  <div class="hero-bg"></div>
+  <div style="max-width:1240px;margin:0 auto;padding:0 40px;width:100%">
+    <div class="hero-text">
+      <div class="tag">
+        <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        Springfield Clinic Vascular Care — Serving Central Illinois
+      </div>
+      <h1>Expert Vascular &amp; Vein Care for a Fuller Life</h1>
+      <p>Board-certified vascular surgeons and vascular medicine specialists offering the complete spectrum of care—from minimally invasive vein treatments to complex endovascular surgery—with compassion and precision.</p>
+      <div class="hero-btns">
+        <a href="#appointment" class="btn btn-yellow">Request Appointment</a>
+        <a href="#assessments" class="btn btn-outline">Check Your Symptoms</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">85+</div><div class="lbl">Years Serving Illinois</div></div>
+        <div class="hero-stat"><div class="num">6</div><div class="lbl">Board-Certified Surgeons</div></div>
+        <div class="hero-stat"><div class="num">8+</div><div class="lbl">Convenient Locations</div></div>
+        <div class="hero-stat"><div class="num">3</div><div class="lbl">Specialties, One Team</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INTRO BAND ── -->
+<div class="intro-band">
+  <div class="intro-band-inner">
+    Springfield Clinic's Vascular program brings together <strong>Vascular Surgery</strong>, <strong>Vein Health</strong>, and <strong>Vascular Medicine</strong> under one coordinated team — delivering seamless, expert care from diagnosis through recovery across central and western Illinois.
+  </div>
+</div>
+
+<!-- ── TWO-DEPT OVERVIEW ── -->
+<div id="about" style="background:#fff; padding:72px 0 0;">
+  <div style="max-width:1240px;margin:0 auto;padding:0 40px 0;">
+    <div class="section-sub" style="color:var(--sc-green)">Three Departments. One Expert Team.</div>
+    <h2 class="section-title">Comprehensive Vascular Care</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="dept-cards">
+    <div class="dept-card surgery fade-in">
+      <div class="dept-icon">
+        <svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+      </div>
+      <h3>Vascular Surgery &amp; Vein Health</h3>
+      <p>Our vascular surgery team brings decades of experience treating the full spectrum of vascular conditions. We prioritize minimally invasive, endovascular approaches — and our dedicated Vein Health clinic specializes in the diagnosis and treatment of varicose veins and venous conditions with state-of-the-art solutions. Located at Springfield Clinic 1st - 800 Building.</p>
+      <ul>
+        <li>Abdominal &amp; Thoracic Aortic Aneurysm (AAA/TAA)</li>
+        <li>Carotid Artery Disease &amp; Stroke Prevention</li>
+        <li>Peripheral Arterial Disease (PAD)</li>
+        <li>Deep Vein Thrombosis (DVT) &amp; Blood Clots</li>
+        <li>Varicose Veins, Spider Veins &amp; Venous Insufficiency</li>
+        <li>Arteriovenous (AV) Fistula / Dialysis Access</li>
+      </ul>
+      <a href="tel:2175287541" class="btn btn-blue" style="margin-right:10px">📞 217-528-7541</a>
+      <a href="tel:2172809156" class="btn" style="background:var(--sc-green)">Vein Clinic: 217-280-9156</a>
+    </div>
+    <div class="dept-card medicine fade-in">
+      <div class="dept-icon">
+        <svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+      </div>
+      <h3>Vascular Medicine</h3>
+      <p>The Vascular Medicine Department provides comprehensive care for patients with circulatory conditions — from diagnosis and medical management to complex treatments. Our team utilizes state-of-the-art technology and evidence-based practices, collaborating with cardiology, radiology, and primary care to develop personalized treatment plans. Serving Macomb, Peoria, and surrounding regions.</p>
+      <ul>
+        <li>Peripheral Artery Disease (PAD) Medical Management</li>
+        <li>Deep Vein Thrombosis (DVT) Evaluation &amp; Treatment</li>
+        <li>Aortic Aneurysm Surveillance &amp; Management</li>
+        <li>Venous &amp; Lymphatic Disorders</li>
+        <li>Renovascular Hypertension</li>
+        <li>Circulatory Disorder Prevention &amp; Chronic Care</li>
+      </ul>
+      <a href="tel:3098331733" class="btn btn-blue">📞 309-833-1733 (Macomb)</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── WHY CHOOSE US ── -->
+<section class="why-section" style="padding-top:72px">
+  <div class="section-inner">
+    <div class="section-sub">Why Springfield Clinic</div>
+    <h2 class="section-title">What Sets Our Vascular Program Apart</h2>
+    <div class="divider"></div>
+    <div class="why-grid">
+      <div class="why-card fade-in">
+        <div class="why-icon">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h4>Board-Certified &amp; Fellowship-Trained</h4>
+        <p>Every vascular surgeon is board-certified with advanced fellowship training in complex open and endovascular procedures, ensuring the highest quality of care.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h4>Minimally Invasive First</h4>
+        <p>We prioritize endovascular, catheter-based, and in-office approaches — less pain, faster recovery, and better outcomes for our patients.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/></svg>
+        </div>
+        <h4>Same-Week Appointments</h4>
+        <p>Urgent vascular concerns receive priority scheduling — most new patients are seen within days, not weeks.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h4>Multidisciplinary Collaboration</h4>
+        <p>Our vascular team works closely with cardiology, radiology, nephrology, and primary care for fully integrated, personalized treatment plans.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 00-1-1h-2a1 1 0 00-1 1v5m4 0H9"/></svg>
+        </div>
+        <h4>State-of-the-Art Facilities</h4>
+        <p>Accredited vascular lab, on-site imaging, dedicated endovascular suites, and a specialized Vein Clinic — all designed for optimal outcomes.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        </div>
+        <h4>Insurance-Friendly Care</h4>
+        <p>Most vascular and vein procedures are covered by insurance. We work with your plan and offer affordable options, including self-pay pricing for cosmetic vein treatments.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LIFESTYLE GALLERY ── -->
+<section class="lifestyle-section" style="padding-bottom:0">
+  <div class="section-inner">
+    <div class="section-sub">Life Without Vascular Pain</div>
+    <h2 class="section-title">Get Back to What You Love</h2>
+    <div class="divider"></div>
+    <p>Effective vascular and vein treatment means more than symptom relief — it means reclaiming an active, fulfilling life. Our patients return to hiking, running, swimming, and spending quality time with family.</p>
+  </div>
+  <div class="lifestyle-grid" style="margin-top:32px">
+    <div class="lifestyle-card tall fade-in">
+      <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=600&q=82" alt="Running outdoors" loading="lazy" />
+      <div class="caption">Run Pain-Free Again</div>
+    </div>
+    <div class="lifestyle-card fade-in">
+      <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&q=82" alt="Family hiking" loading="lazy" />
+      <div class="caption">Stay Active with Family</div>
+    </div>
+    <div class="lifestyle-card fade-in">
+      <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=82" alt="Yoga outdoors" loading="lazy" />
+      <div class="caption">Move Freely, Live Fully</div>
+    </div>
+    <div class="lifestyle-card fade-in">
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=82" alt="Cycling" loading="lazy" />
+      <div class="caption">Endurance Without Limits</div>
+    </div>
+    <div class="lifestyle-card fade-in">
+      <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=82" alt="Swimming" loading="lazy" />
+      <div class="caption">Healthy Circulation, Every Stroke</div>
+    </div>
+    <div class="lifestyle-card fade-in">
+      <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&q=82" alt="Couple walking" loading="lazy" />
+      <div class="caption">Enjoy Every Step of Life</div>
+    </div>
+    <div class="lifestyle-card fade-in">
+      <img src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=600&q=82" alt="Pickleball active seniors" loading="lazy" />
+      <div class="caption">Active at Every Age</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SPECIALTY PROCEDURES TABS ── -->
+<section class="tabs-section" id="procedures" style="padding-top:80px">
+  <div class="section-inner">
+    <div class="section-sub">Advanced Procedures</div>
+    <h2 class="section-title">Specialty Endovascular Treatments</h2>
+    <div class="divider"></div>
+    <div class="tabs-wrap">
+      <div class="tab-btns" role="tablist">
+        <button class="tab-btn active" onclick="switchTab('vein')" role="tab">Vein Treatments</button>
+        <button class="tab-btn" onclick="switchTab('gae')" role="tab">Geniculate Artery Embolization</button>
+        <button class="tab-btn" onclick="switchTab('renal')" role="tab">Renal Denervation</button>
+        <button class="tab-btn" onclick="switchTab('pae')" role="tab">Prostatic Artery Embolization</button>
+        <button class="tab-btn" onclick="switchTab('uae')" role="tab">Uterine Artery Embolization</button>
+        <button class="tab-btn" onclick="switchTab('evar')" role="tab">EVAR / Stenting</button>
+      </div>
+
+      <!-- VEIN -->
+      <div id="tab-vein" class="tab-panel active">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=80" alt="Vein Treatment" loading="lazy"/>
+        <div class="tab-text">
+          <h3>Comprehensive Vein Treatment</h3>
+          <p>Our board-certified vein specialists offer the complete range of treatments for varicose veins, spider veins, and chronic venous insufficiency — most procedures performed in-office with no hospital stay required.</p>
+          <ul>
+            <li><strong>Endovenous Laser Therapy (EVLT)</strong> — Heat energy closes diseased veins; minimally invasive, quick recovery</li>
+            <li><strong>Radiofrequency Ablation (RFA)</strong> — Excellent long-term results for larger varicose veins</li>
+            <li><strong>Sclerotherapy</strong> — Chemical injection to collapse spider veins and smaller varicosities</li>
+            <li><strong>Varithena® Foam Sclerotherapy</strong> — FDA-approved foam for larger varicose veins</li>
+            <li><strong>Ambulatory Phlebectomy</strong> — Tiny incisions to remove bulging surface veins</li>
+            <li><strong>Compression Therapy</strong> — Medical-grade stockings as first-line or adjunct treatment</li>
+          </ul>
+          <span class="benefit-pill">In-Office</span>
+          <span class="benefit-pill">Same-Day</span>
+          <span class="benefit-pill">Walk-In / Walk-Out</span>
+          <span class="benefit-pill">Insurance Accepted</span>
+          <br/><br/>
+          <a href="#appointment" class="btn">Schedule Vein Consultation</a>
+        </div>
+      </div>
+
+      <!-- GAE -->
+      <div id="tab-gae" class="tab-panel">
+        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=700&q=80" alt="Knee Pain Relief" loading="lazy"/>
+        <div class="tab-text">
+          <h3>Geniculate Artery Embolization (GAE)</h3>
+          <p>GAE is a breakthrough minimally invasive procedure for patients with knee osteoarthritis pain — offering significant relief without surgery or joint replacement.</p>
+          <p>A small catheter delivers tiny microspheres to reduce blood flow to the inflamed knee lining (synovium), decreasing pain and inflammation.</p>
+          <ul>
+            <li>Outpatient — home same day</li>
+            <li>No general anesthesia required</li>
+            <li>Significant pain reduction in 70–80% of patients</li>
+            <li>Ideal for patients who are poor surgical candidates or prefer non-surgical options</li>
+            <li>Can be repeated if symptoms recur</li>
+          </ul>
+          <span class="benefit-pill">Non-Surgical</span>
+          <span class="benefit-pill">Same-Day Discharge</span>
+          <span class="benefit-pill">Minimal Recovery</span>
+          <br/><br/>
+          <a href="#appointment" class="btn">Learn More About GAE</a>
+        </div>
+      </div>
+
+      <!-- RENAL -->
+      <div id="tab-renal" class="tab-panel">
+        <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=700&q=80" alt="Renal Denervation" loading="lazy"/>
+        <div class="tab-text">
+          <h3>Renal Denervation</h3>
+          <p>An innovative catheter-based treatment for resistant hypertension — high blood pressure that doesn't respond adequately to medications alone.</p>
+          <p>Ultrasound or radiofrequency energy disrupts the renal sympathetic nerves surrounding the renal arteries, reducing overactive nerve signals that elevate blood pressure.</p>
+          <ul>
+            <li>FDA-cleared (Recor Medical Paradise™ system)</li>
+            <li>Treats resistant or difficult-to-control hypertension</li>
+            <li>Outpatient procedure — typically 45–60 minutes</li>
+            <li>No stents or implants left behind</li>
+            <li>Can reduce systolic BP by 8–10 mmHg on average</li>
+          </ul>
+          <span class="benefit-pill">FDA-Cleared</span>
+          <span class="benefit-pill">No Implants</span>
+          <span class="benefit-pill">Outpatient</span>
+          <br/><br/>
+          <a href="#appointment" class="btn">Hypertension Consultation</a>
+        </div>
+      </div>
+
+      <!-- PAE -->
+      <div id="tab-pae" class="tab-panel">
+        <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=700&q=80" alt="Prostatic Artery Embolization" loading="lazy"/>
+        <div class="tab-text">
+          <h3>Prostatic Artery Embolization (PAE)</h3>
+          <p>A minimally invasive, non-surgical alternative for men with benign prostatic hyperplasia (BPH) causing urinary symptoms — without the risks of traditional surgery.</p>
+          <p>Tiny microspheres block blood supply to areas of the enlarged prostate, causing it to shrink and relieving obstructive urinary symptoms while preserving sexual function.</p>
+          <ul>
+            <li>No incision, no general anesthesia</li>
+            <li>Preserves erectile and ejaculatory function</li>
+            <li>85–90% improvement in urinary symptoms</li>
+            <li>Same-day or overnight procedure</li>
+            <li>Suitable for large prostates not amenable to other therapies</li>
+          </ul>
+          <span class="benefit-pill">No Incision</span>
+          <span class="benefit-pill">Sexual Function Preserved</span>
+          <span class="benefit-pill">High Success Rate</span>
+          <br/><br/>
+          <a href="#appointment" class="btn">PAE Consultation</a>
+        </div>
+      </div>
+
+      <!-- UAE -->
+      <div id="tab-uae" class="tab-panel">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=80" alt="Uterine Artery Embolization" loading="lazy"/>
+        <div class="tab-text">
+          <h3>Uterine Artery Embolization (UAE)</h3>
+          <p>A proven, uterus-preserving treatment for symptomatic uterine fibroids — an effective alternative to hysterectomy or myomectomy with faster recovery.</p>
+          <p>Tiny particles delivered through a catheter cut off blood supply to fibroids, causing them to shrink and dramatically improving symptoms.</p>
+          <ul>
+            <li>Preserves the uterus — no hysterectomy required</li>
+            <li>Treats all fibroids simultaneously regardless of number or location</li>
+            <li>85–90% of patients report significant improvement in heavy bleeding</li>
+            <li>Short hospital stay with return to normal activity in 1–2 weeks</li>
+            <li>Proven therapy with 30+ years of clinical evidence</li>
+          </ul>
+          <span class="benefit-pill">Uterus Preserved</span>
+          <span class="benefit-pill">Treats All Fibroids</span>
+          <span class="benefit-pill">Fast Recovery</span>
+          <br/><br/>
+          <a href="#appointment" class="btn">Fibroid Consultation</a>
+        </div>
+      </div>
+
+      <!-- EVAR -->
+      <div id="tab-evar" class="tab-panel">
+        <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=700&q=80" alt="EVAR Endovascular Surgery" loading="lazy"/>
+        <div class="tab-text">
+          <h3>EVAR, Stenting &amp; Endovascular Surgery</h3>
+          <p>Our fellowship-trained vascular surgeons provide the most advanced endovascular techniques, offering minimally invasive solutions for complex vascular disease.</p>
+          <ul>
+            <li><strong>EVAR/TEVAR</strong> — Endovascular aneurysm repair for aortic aneurysms</li>
+            <li><strong>Carotid Artery Stenting &amp; Endarterectomy</strong> — Stroke prevention</li>
+            <li><strong>Lower Extremity Angioplasty &amp; Stenting</strong> — Restoring blood flow in PAD</li>
+            <li><strong>Renal &amp; Mesenteric Artery Stenting</strong> — Renovascular hypertension and bowel ischemia</li>
+            <li><strong>Vascular Access (AV Fistula/Graft)</strong> — Dialysis access creation and maintenance</li>
+            <li><strong>IVC Filter Placement &amp; Retrieval</strong> — Pulmonary embolism prevention</li>
+          </ul>
+          <span class="benefit-pill">Fellowship Trained</span>
+          <span class="benefit-pill">High-Volume Center</span>
+          <span class="benefit-pill">Open &amp; Endovascular</span>
+          <br/><br/>
+          <a href="#appointment" class="btn">Vascular Surgery Consult</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VEIN HEALTH DEEP DIVE ── -->
+<section class="vein-spotlight" id="vein">
+  <div class="section-inner">
+    <div class="section-sub">Vein Health Spotlight</div>
+    <h2 class="section-title">Understanding Varicose &amp; Spider Veins</h2>
+    <div class="divider"></div>
+    <div class="vein-two-col">
+      <div class="fade-in">
+        <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=700&q=80" alt="Varicose vein treatment" loading="lazy" />
+      </div>
+      <div class="vein-info fade-in">
+        <h3>Do You Recognize These Signs?</h3>
+        <p>Do you wear pants or long skirts to cover bulging, discolored veins? Is your sleep disrupted by achy legs? Do you avoid standing for long periods? You're not alone — and effective, minimally invasive treatment is available.</p>
+
+        <h3>What Are Varicose Veins?</h3>
+        <p>Varicose veins are enlarged, twisted veins most commonly found in the legs. They occur when the valves in your veins stop working properly, causing blood to flow backward and pool — stretching and bulging the vein wall. They may appear as blue or purple cords just under the skin, often surrounded by spider veins.</p>
+
+        <h3>Risk Factors</h3>
+        <div class="risk-grid">
+          <div class="risk-item">Age (weakening valves)</div>
+          <div class="risk-item">Family genetics</div>
+          <div class="risk-item">Hormonal changes</div>
+          <div class="risk-item">Obesity / extra pressure</div>
+          <div class="risk-item">Prolonged standing / sitting</div>
+          <div class="risk-item">Pregnancy</div>
+        </div>
+
+        <h3>Symptoms That Warrant Evaluation</h3>
+        <ul>
+          <li>Aching, heavy, or tired legs — especially at day's end</li>
+          <li>Throbbing, burning, or cramping in the legs</li>
+          <li>Swelling in the lower legs or ankles</li>
+          <li>Itching around the veins</li>
+          <li>Skin discoloration, hardening, or texture changes</li>
+          <li>Restless legs at night</li>
+        </ul>
+
+        <p style="font-size:0.88rem;background:rgba(253,189,61,0.15);border-left:3px solid var(--sc-yellow);padding:12px 14px;border-radius:0 8px 8px 0;"><strong>Why treat now?</strong> Beyond cosmetics, untreated varicose veins can progress to chronic skin changes, non-healing ulcers, and blood clots (DVT). Early treatment is easier, safer, and typically covered by insurance.</p>
+
+        <div style="margin-top:20px">
+          <a href="#appointment" class="btn" style="margin-right:10px">Schedule Vein Consultation</a>
+          <a href="tel:2172809156" class="btn btn-yellow">📞 Vein Clinic Direct Line</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TREATMENT OPTIONS ── -->
+<section class="treatments-section" id="treatments">
+  <div class="section-inner">
+    <div class="section-sub">Vein Treatment Options</div>
+    <h2 class="section-title">Minimally Invasive Vein Treatments</h2>
+    <div class="divider"></div>
+    <p style="max-width:640px;margin-bottom:10px">Most procedures are performed in our office in 30–60 minutes, with patients walking out the same day. The Vein Clinic is located at Springfield Clinic 1st - 800 Building.</p>
+    <div class="treatments-grid" style="margin-top:32px">
+      <div class="treatment-card fade-in">
+        <div class="t-icon">🔆</div>
+        <h4>Endovenous Laser Therapy (EVLT)</h4>
+        <p>Uses heat energy delivered by a thin laser fiber to close the diseased vein. Minimally invasive with a quick recovery — most patients return to normal activity the next day.</p>
+        <span class="t-badge">Outpatient · Local Anesthesia</span>
+      </div>
+      <div class="treatment-card fade-in">
+        <div class="t-icon">💉</div>
+        <h4>Sclerotherapy</h4>
+        <p>A sclerosing medication is injected directly into spider veins and smaller varicosities, causing them to collapse and gradually fade. In-office with no downtime.</p>
+        <span class="t-badge">In-Office · No Downtime</span>
+      </div>
+      <div class="treatment-card fade-in">
+        <div class="t-icon">🫧</div>
+        <h4>Varithena® Foam Sclerotherapy</h4>
+        <p>FDA-approved injectable foam for larger and more tortuous varicose veins. The foam displaces blood in the vein, causing the vein wall to seal shut.</p>
+        <span class="t-badge">FDA-Approved · In-Office</span>
+      </div>
+      <div class="treatment-card fade-in">
+        <div class="t-icon">✂️</div>
+        <h4>Ambulatory Phlebectomy</h4>
+        <p>Bulging surface veins are removed through tiny punctures in the skin — so small, they require no stitches. Excellent cosmetic results with minimal scarring.</p>
+        <span class="t-badge">Same-Day · No Stitches</span>
+      </div>
+      <div class="treatment-card fade-in">
+        <div class="t-icon">🧦</div>
+        <h4>Compression Therapy</h4>
+        <p>Medical-grade compression stockings improve venous blood return and reduce symptoms. Often prescribed as first-line therapy or used alongside other treatments.</p>
+        <span class="t-badge">First-Line · Non-Invasive</span>
+      </div>
+      <div class="treatment-card fade-in">
+        <div class="t-icon">📡</div>
+        <h4>Radiofrequency Ablation (RFA)</h4>
+        <p>Controlled radiofrequency heat energy is applied along the length of the diseased vein, sealing it closed. Excellent long-term results for saphenous vein insufficiency.</p>
+        <span class="t-badge">Outpatient · Proven Results</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ASSESSMENT HUB ── -->
+<section class="quiz-section" id="assessments" style="padding-bottom:80px">
+  <div class="section-inner">
+    <div class="section-sub" style="color:rgba(255,255,255,0.65)">Know Your Risk</div>
+    <h2 class="section-title">Vascular Risk Assessment Center</h2>
+    <div class="divider"></div>
+    <p style="opacity:0.85;margin-bottom:32px;max-width:680px;">Select a condition below to take a self-assessment. These tools help you understand your risk and whether you should speak with one of our specialists. They do not replace a professional medical evaluation.</p>
+
+    <!-- Assessment selector tabs -->
+    <div class="assess-tabs">
+      <button class="assess-tab active" onclick="switchAssess('vein')" id="atab-vein">
+        <span class="assess-icon">🩸</span>
+        <span class="assess-label">Vein Disease</span>
+      </button>
+      <button class="assess-tab" onclick="switchAssess('aaa')" id="atab-aaa">
+        <span class="assess-icon">🫀</span>
+        <span class="assess-label">Aortic Aneurysm</span>
+      </button>
+      <button class="assess-tab" onclick="switchAssess('carotid')" id="atab-carotid">
+        <span class="assess-icon">🧠</span>
+        <span class="assess-label">Carotid / Stroke</span>
+      </button>
+      <button class="assess-tab" onclick="switchAssess('pad')" id="atab-pad">
+        <span class="assess-icon">🦵</span>
+        <span class="assess-label">PAD Challenge</span>
+      </button>
+    </div>
+
+    <!-- ───── VEIN QUIZ ───── -->
+    <div id="assess-vein" class="assess-panel active">
+      <div class="quiz-card">
+        <div class="quiz-card-header">
+          <span class="qc-icon">🩸</span>
+          <div>
+            <div class="qc-title">Vein Disease Symptom Check</div>
+            <div class="qc-sub">10 questions · ~2 minutes</div>
+          </div>
+        </div>
+        <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="vein-fill"></div></div>
+        <div id="vein-body">
+          <div class="quiz-question" id="vein-q"></div>
+          <div class="quiz-answers" id="vein-answers"></div>
+          <div class="quiz-nav">
+            <button id="vein-prev" onclick="qPrev('vein')">← Previous</button>
+            <button id="vein-next" onclick="qNext('vein')">Next →</button>
+          </div>
+          <div class="quiz-counter" id="vein-counter"></div>
+        </div>
+        <div id="vein-result" class="quiz-result-panel">
+          <div class="result-score" id="vein-score"></div>
+          <div class="result-label" id="vein-label"></div>
+          <p class="result-msg" id="vein-msg"></p>
+          <a href="#appointment" class="btn btn-yellow" style="margin-right:10px">Request Consultation</a>
+          <button class="btn" style="background:rgba(255,255,255,0.15)" onclick="qRestart('vein')">Retake</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───── AAA QUIZ ───── -->
+    <div id="assess-aaa" class="assess-panel">
+      <div class="quiz-card">
+        <div class="quiz-card-header">
+          <span class="qc-icon">🫀</span>
+          <div>
+            <div class="qc-title">Aortic Aneurysm (AAA) Risk Assessment</div>
+            <div class="qc-sub">8 questions · ~2 minutes</div>
+          </div>
+        </div>
+        <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="aaa-fill"></div></div>
+        <div id="aaa-body">
+          <div class="quiz-question" id="aaa-q"></div>
+          <div class="quiz-answers" id="aaa-answers"></div>
+          <div class="quiz-nav">
+            <button id="aaa-prev" onclick="qPrev('aaa')">← Previous</button>
+            <button id="aaa-next" onclick="qNext('aaa')">Next →</button>
+          </div>
+          <div class="quiz-counter" id="aaa-counter"></div>
+        </div>
+        <div id="aaa-result" class="quiz-result-panel">
+          <div class="result-score" id="aaa-score"></div>
+          <div class="result-label" id="aaa-label"></div>
+          <p class="result-msg" id="aaa-msg"></p>
+          <a href="#appointment" class="btn btn-yellow" style="margin-right:10px">Request Screening</a>
+          <button class="btn" style="background:rgba(255,255,255,0.15)" onclick="qRestart('aaa')">Retake</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───── CAROTID QUIZ ───── -->
+    <div id="assess-carotid" class="assess-panel">
+      <div class="quiz-card">
+        <div class="quiz-card-header">
+          <span class="qc-icon">🧠</span>
+          <div>
+            <div class="qc-title">Carotid Artery Disease &amp; Stroke Risk</div>
+            <div class="qc-sub">9 questions · ~2 minutes</div>
+          </div>
+        </div>
+        <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="carotid-fill"></div></div>
+        <div id="carotid-body">
+          <div class="quiz-question" id="carotid-q"></div>
+          <div class="quiz-answers" id="carotid-answers"></div>
+          <div class="quiz-nav">
+            <button id="carotid-prev" onclick="qPrev('carotid')">← Previous</button>
+            <button id="carotid-next" onclick="qNext('carotid')">Next →</button>
+          </div>
+          <div class="quiz-counter" id="carotid-counter"></div>
+        </div>
+        <div id="carotid-result" class="quiz-result-panel">
+          <div class="result-score" id="carotid-score"></div>
+          <div class="result-label" id="carotid-label"></div>
+          <p class="result-msg" id="carotid-msg"></p>
+          <a href="#appointment" class="btn btn-yellow" style="margin-right:10px">Request Evaluation</a>
+          <button class="btn" style="background:rgba(255,255,255,0.15)" onclick="qRestart('carotid')">Retake</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───── PAD GAME ───── -->
+    <div id="assess-pad" class="assess-panel">
+      <div class="pad-game-wrap">
+        <!-- Left: game canvas area -->
+        <div class="pad-game-left">
+          <div class="pad-game-header">
+            <span class="qc-icon">🦵</span>
+            <div>
+              <div class="qc-title">PAD Walking Challenge</div>
+              <div class="qc-sub">How far can you go? Tap to walk — and answer symptom checkpoints!</div>
+            </div>
+          </div>
+
+          <!-- Walking Track -->
+          <div class="pad-track" id="padTrack">
+            <div class="pad-track-bg">
+              <div class="pad-road">
+                <div class="pad-road-line"></div>
+              </div>
+              <div class="pad-distance-markers">
+                <span class="d-marker" id="dm0" style="left:4%">Start</span>
+                <span class="d-marker" id="dm1" style="left:22%">100m</span>
+                <span class="d-marker" id="dm2" style="left:40%">250m</span>
+                <span class="d-marker" id="dm3" style="left:58%">500m</span>
+                <span class="d-marker" id="dm4" style="left:76%">750m</span>
+                <span class="d-marker" id="dm5" style="left:94%">1km</span>
+              </div>
+              <div class="pad-checkpoints">
+                <div class="pad-cp" style="left:22%" id="cp1">⚑</div>
+                <div class="pad-cp" style="left:40%" id="cp2">⚑</div>
+                <div class="pad-cp" style="left:58%" id="cp3">⚑</div>
+                <div class="pad-cp" style="left:76%" id="cp4">⚑</div>
+              </div>
+              <div class="pad-walker" id="padWalker">🚶</div>
+              <div class="pad-finish" style="right:2%">🏁</div>
+            </div>
+          </div>
+
+          <!-- Step button + meter -->
+          <div class="pad-controls">
+            <button class="pad-step-btn" id="padStepBtn" onclick="padStep()">
+              <span id="padBtnLabel">▶ Start Walking</span>
+            </button>
+            <div class="pad-meter">
+              <div class="pad-meter-bar">
+                <div class="pad-meter-fill" id="padMeterFill"></div>
+              </div>
+              <div class="pad-meter-label"><span id="padDistLabel">0m</span> / 1,000m</div>
+            </div>
+          </div>
+
+          <!-- Checkpoint question overlay -->
+          <div class="pad-cp-question" id="padCpQuestion" style="display:none">
+            <div class="pad-cp-q-inner">
+              <div class="pad-cp-icon">⚑ Checkpoint</div>
+              <div class="pad-cp-qtext" id="padCpQText"></div>
+              <div class="pad-cp-answers" id="padCpAnswers"></div>
+            </div>
+          </div>
+
+          <!-- Result -->
+          <div class="pad-result" id="padResult" style="display:none">
+            <div class="pad-result-emoji" id="padResultEmoji"></div>
+            <div class="pad-result-dist" id="padResultDist"></div>
+            <div class="result-label" id="padResultLabel" style="color:#fff;margin:8px 0 14px"></div>
+            <p class="result-msg" id="padResultMsg" style="opacity:0.9;margin-bottom:22px"></p>
+            <a href="#appointment" class="btn btn-yellow" style="margin-right:10px">Request Evaluation</a>
+            <button class="btn" style="background:rgba(255,255,255,0.15)" onclick="padReset()">Try Again</button>
+          </div>
+        </div>
+
+        <!-- Right: info panel -->
+        <div class="pad-game-info">
+          <h4>What is PAD?</h4>
+          <p>Peripheral Artery Disease (PAD) occurs when fatty plaque narrows the arteries carrying blood to your legs — causing pain, cramping, and poor healing.</p>
+          <div class="pad-stat-box" id="padStatBox">
+            <div class="pad-stat-num">1 in 20</div>
+            <div class="pad-stat-lbl">adults over 50 has PAD</div>
+          </div>
+          <div class="pad-warning-signs">
+            <div class="pad-warn-title">⚠ Warning Signs</div>
+            <ul>
+              <li>Leg cramping or pain when walking that stops at rest</li>
+              <li>Leg numbness or weakness</li>
+              <li>Cold or discolored feet or toes</li>
+              <li>Slow-healing wounds or sores on legs or feet</li>
+              <li>Shiny skin or hair loss on legs</li>
+            </ul>
+          </div>
+          <div id="padCurrentFact" class="pad-fact-box">
+            <strong>How to play:</strong> Tap the walk button to advance. Answer symptom checkpoints along the way. Your final distance and answers will reveal your PAD risk level.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /section-inner -->
+</section>
+
+<!-- ── TEAM ── -->
+<section class="team-section" id="team">
+  <div class="section-inner">
+    <div class="section-sub">Meet Our Specialists</div>
+    <h2 class="section-title">Our Vascular Care Team</h2>
+    <div class="divider"></div>
+    <p style="max-width:640px;margin-bottom:36px">All providers are currently accepting new patients. Self-referral is accepted; referral is preferred for complex cases.</p>
+
+    <div style="font-weight:700;color:var(--sc-blue);font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px">Vascular Surgery &amp; Vein Health — Springfield</div>
+    <div class="team-grid" style="margin-bottom:48px">
+      <div class="team-card fade-in">
+        <img src="https://cdn.sc.care/web/images/providers/Barkmeier%2C%20Lynne-7dRPdj5sx7.jpg" alt="Dr. Lynne D. Barkmeier" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=75'"/>
+        <div class="card-body">
+          <div class="name">Lynne D. Barkmeier, MD, FACS</div>
+          <div class="dept-tag">Vascular Surgery</div>
+          <div class="specialty">Carotid Artery Disease · Peripheral Vascular Disease · Venous Disease</div>
+          <div class="accepting">✓ Accepting New Patients</div>
+        </div>
+      </div>
+      <div class="team-card fade-in">
+        <img src="https://cdn.sc.care/web/images/providers/ryan-stephen%20%282%29-rYM19I68id.jpg" alt="Dr. Stephen M. Ryan" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=75'"/>
+        <div class="card-body">
+          <div class="name">Stephen M. Ryan, MD</div>
+          <div class="dept-tag">Vascular Surgery</div>
+          <div class="specialty">Peripheral Vascular Disease · Arterial Disease · Multi-site Practice</div>
+          <div class="accepting">✓ Accepting New Patients</div>
+        </div>
+      </div>
+      <div class="team-card fade-in">
+        <img src="https://cdn.sc.care/web/images/providers/lambert-andrew-CjS7gMZ9AU.jpg" alt="Dr. Andrew D. Lambert" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&q=75'"/>
+        <div class="card-body">
+          <div class="name">Andrew D. Lambert, MD</div>
+          <div class="dept-tag">Vascular Surgery</div>
+          <div class="specialty">Endovascular Surgery · Vascular Surgery · Patient Experience</div>
+          <div class="accepting">✓ Accepting New Patients</div>
+        </div>
+      </div>
+      <div class="team-card fade-in">
+        <img src="https://cdn.sc.care/web/images/providers/patel-dhiren-qf6EIKZHJJ.jpg" alt="Dr. Dhiren B. Patel" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&q=75'"/>
+        <div class="card-body">
+          <div class="name">Dhiren B. Patel, MD, FACS</div>
+          <div class="dept-tag">Vascular Surgery</div>
+          <div class="specialty">Aortic Aneurysm (EVAR/FEVAR) · Carotid Disease · Hemodialysis Access</div>
+          <div class="accepting">✓ Accepting New Patients</div>
+        </div>
+      </div>
+      <div class="team-card fade-in">
+        <img src="https://cdn.sc.care/web/images/providers/serafin-emily-NYmhAMyTYZ.jpg" alt="Dr. Emily M. Serafin" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=75'"/>
+        <div class="card-body">
+          <div class="name">Emily M. Serafin, MD</div>
+          <div class="dept-tag">Vascular Surgery</div>
+          <div class="specialty">Vascular Surgery · Endovascular Procedures</div>
+          <div class="accepting">✓ Accepting New Patients</div>
+        </div>
+      </div>
+      <div class="team-card fade-in">
+        <img src="https://cdn.sc.care/web/images/providers/graven-stacey-9zQ2MAtNBF.jpg" alt="Stacey A. Graven, APRN" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=75'"/>
+        <div class="card-body">
+          <div class="name">Stacey A. Graven, APRN, CNP</div>
+          <div class="dept-tag">Vascular NP</div>
+          <div class="specialty">DVT Management · Vascular Surgery NP · Wound Care</div>
+          <div class="accepting">✓ Accepting New Patients</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="font-weight:700;color:var(--sc-blue);font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px">Vascular Medicine — Macomb, Peoria &amp; Region</div>
+    <div class="team-grid" style="grid-template-columns:repeat(auto-fill,minmax(210px,1fr));max-width:480px">
+      <div class="team-card fade-in">
+        <img src="https://cdn.sc.care/web/images/providers/khurana-aman-OjKNxCd13v.jpg" alt="Dr. Aman Khurana" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&q=75'"/>
+        <div class="card-body">
+          <div class="name">Aman Khurana, MD</div>
+          <div class="dept-tag" style="background:rgba(9,59,96,0.1);color:var(--sc-blue)">Vascular Medicine</div>
+          <div class="specialty">Vascular Medicine · PAD · DVT · Circulatory Disorders</div>
+          <div class="accepting">✓ Accepting New Patients</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LOCATIONS ── -->
+<section class="locations-section" id="locations">
+  <div class="section-inner">
+    <div class="section-sub">Our Locations</div>
+    <h2 class="section-title">Convenient Care Across Central Illinois</h2>
+    <div class="divider"></div>
+
+    <p style="margin-bottom:12px;font-weight:700;font-size:0.85rem;color:var(--sc-blue);text-transform:uppercase;letter-spacing:1px">Vascular Surgery &amp; Vein Health Locations</p>
+    <div class="locations-grid" style="margin-bottom:40px">
+      <div class="location-card fade-in">
+        <span class="location-tag tag-vein">Main Vein Clinic + Surgery</span>
+        <h4>Springfield Clinic 1st - 800 Building</h4>
+        <p>800 North 1st Street, Springfield, IL 62702</p>
+        <p>Mon–Fri 8:00 AM – 5:00 PM</p>
+        <a href="tel:2175287541">📞 217-528-7541</a><br/>
+        <a href="tel:2172809156" style="margin-top:4px;display:inline-block">🩺 Vein Clinic: 217-280-9156</a>
+      </div>
+      <div class="location-card fade-in">
+        <span class="location-tag tag-surgery">Vascular Surgery</span>
+        <h4>Springfield Clinic Jacksonville</h4>
+        <p>15 Founders Lane, Jacksonville, IL 62650</p>
+        <p>Mon–Fri 8:00 AM – 5:00 PM</p>
+        <a href="tel:2172911041">📞 217-291-1041</a>
+      </div>
+      <div class="location-card fade-in">
+        <span class="location-tag tag-surgery">Vascular Surgery</span>
+        <h4>Springfield Clinic Lincoln</h4>
+        <p>100 Stahlhut Drive, Lincoln, IL 62656</p>
+        <p>Mon–Fri 7:30 AM – 5:00 PM</p>
+        <a href="tel:2177359555">📞 217-735-9555</a>
+      </div>
+      <div class="location-card fade-in">
+        <span class="location-tag tag-surgery">Vascular Surgery</span>
+        <h4>Springfield Clinic Taylorville</h4>
+        <p>600 North Main Street, Taylorville, IL 62568</p>
+        <a href="tel:2172878855">📞 217-287-8855</a>
+      </div>
+      <div class="location-card fade-in">
+        <span class="location-tag tag-surgery">Outpatient Surgery</span>
+        <h4>Springfield Clinic Surgery Center</h4>
+        <p>1025 South 6th Street, Springfield, IL 62703</p>
+        <a href="tel:4474483042">📞 447-448-3042</a>
+      </div>
+      <div class="location-card fade-in">
+        <span class="location-tag tag-surgery">Vascular Surgery</span>
+        <h4>Memorial Wound Care</h4>
+        <p>901 North 1st Street, Springfield, IL 62702</p>
+        <a href="tel:2175882660">📞 217-588-2660</a>
+      </div>
+      <div class="location-card fade-in">
+        <span class="location-tag tag-surgery">Outreach</span>
+        <h4>Carlinville Area Hospital Specialty Clinic</h4>
+        <p>20733 North Broad Street, Carlinville, IL 62626</p>
+        <a href="tel:8004447541">📞 800-444-7541</a>
+      </div>
+      <div class="location-card fade-in">
+        <span class="location-tag tag-surgery">Outreach</span>
+        <h4>Sarah D. Culbertson Memorial Hospital</h4>
+        <p>238 South Congress, Rushville, IL 62681</p>
+        <a href="tel:2173224321">📞 217-322-4321</a>
+      </div>
+    </div>
+
+    <p style="margin-bottom:12px;font-weight:700;font-size:0.85rem;color:var(--sc-blue);text-transform:uppercase;letter-spacing:1px">Vascular Medicine Locations</p>
+    <div class="locations-grid">
+      <div class="location-card fade-in" style="border-left-color:var(--sc-blue)">
+        <span class="location-tag tag-medicine">Vascular Medicine</span>
+        <h4>Springfield Clinic Macomb</h4>
+        <p>505 East Grant Street, Macomb, IL 61455</p>
+        <p>Mon–Fri 8:00 AM – 5:00 PM</p>
+        <a href="tel:3098331733">📞 309-833-1733</a>
+      </div>
+      <div class="location-card fade-in" style="border-left-color:var(--sc-blue)">
+        <span class="location-tag tag-medicine">Vascular Medicine</span>
+        <h4>Springfield Clinic Peoria Medical Suites</h4>
+        <p>7323 N Knoxville Ave, Peoria, IL 61614</p>
+        <a href="tel:3093053585">📞 309-305-3585</a>
+      </div>
+      <div class="location-card fade-in" style="border-left-color:var(--sc-blue)">
+        <span class="location-tag tag-medicine">Vascular Medicine</span>
+        <h4>Mason District Hospital</h4>
+        <p>615 N Promenade, Havana, IL 62644</p>
+        <a href="tel:3095436600">📞 309-543-6600</a>
+      </div>
+      <div class="location-card fade-in" style="border-left-color:var(--sc-blue)">
+        <span class="location-tag tag-medicine">Vascular Medicine</span>
+        <h4>Boyd Greene County Rural Health Clinic</h4>
+        <p>727 9th Street, Carrollton, IL 62016</p>
+        <a href="tel:2179426612">📞 217-942-6612</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── APPOINTMENT ── -->
+<section class="appt-section" id="appointment">
+  <div class="section-inner">
+    <div class="section-sub" style="color:rgba(255,255,255,0.65)">Get Started Today</div>
+    <h2 class="section-title">Request an Appointment</h2>
+    <div class="divider"></div>
+    <div class="appt-grid">
+      <div class="appt-info fade-in">
+        <p>Our vascular care team is accepting new patients. Complete the form and our scheduling team will contact you within one business day to confirm your appointment. Self-referral is welcome for most conditions.</p>
+        <div class="contact-item">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <span><strong>Vascular Surgery &amp; Vein:</strong><br/><a href="tel:2175287541" style="color:rgba(255,255,255,0.85)">217-528-7541</a> · Vein Direct: <a href="tel:2172809156" style="color:rgba(255,255,255,0.85)">217-280-9156</a></span>
+        </div>
+        <div class="contact-item">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <span><strong>Vascular Medicine (Macomb):</strong><br/><a href="tel:3098331733" style="color:rgba(255,255,255,0.85)">309-833-1733</a></span>
+        </div>
+        <div class="contact-item">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span><strong>Main Location:</strong> 800 North 1st Street, Floor 4, Springfield, IL 62702</span>
+        </div>
+        <div class="contact-item">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/></svg>
+          <span><strong>Hours:</strong> Monday–Friday, 8:00 AM – 5:00 PM</span>
+        </div>
+        <div class="urgent-box">
+          <div class="u-title">🚨 Urgent Vascular Symptoms</div>
+          <p>Sudden leg pain, chest pain, pulsating abdominal mass, stroke symptoms, or acute limb ischemia require <strong>immediate emergency evaluation</strong>. Please call 911 or go to your nearest emergency room without delay.</p>
+        </div>
+      </div>
+      <div class="appt-form fade-in">
+        <h3>Appointment Request Form</h3>
+        <div id="apptFormWrap">
+          <div class="form-row">
+            <div class="form-group"><label>First Name *</label><input type="text" id="fFirst" placeholder="First name" /></div>
+            <div class="form-group"><label>Last Name *</label><input type="text" id="fLast" placeholder="Last name" /></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Date of Birth *</label><input type="date" id="fDob" /></div>
+            <div class="form-group"><label>Phone Number *</label><input type="tel" id="fPhone" placeholder="(217) 555-0000" /></div>
+          </div>
+          <div class="form-group"><label>Email Address</label><input type="email" id="fEmail" placeholder="you@email.com" /></div>
+          <div class="form-group">
+            <label>Department / Service *</label>
+            <select id="fDept">
+              <option value="">— Select department —</option>
+              <option>Vascular Surgery (Springfield)</option>
+              <option>Vein Health Clinic (Springfield)</option>
+              <option>Vascular Medicine (Macomb / Peoria region)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Reason for Visit / Symptoms *</label>
+            <select id="fReason">
+              <option value="">— Select a reason —</option>
+              <option>Varicose or Spider Veins</option>
+              <option>Leg Pain / Heaviness / Swelling</option>
+              <option>Peripheral Artery Disease (PAD)</option>
+              <option>Aortic Aneurysm Evaluation</option>
+              <option>Carotid Artery Disease / Stroke Risk</option>
+              <option>Geniculate Artery Embolization (Knee Pain)</option>
+              <option>Prostatic Artery Embolization (BPH)</option>
+              <option>Uterine Fibroid / UAE</option>
+              <option>Renal Denervation (Hypertension)</option>
+              <option>DVT / Clot Evaluation</option>
+              <option>Wound Care / Non-Healing Ulcer</option>
+              <option>Dialysis Access / AV Fistula</option>
+              <option>Post-Procedure Follow-Up</option>
+              <option>Second Opinion</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Insurance Provider</label><input type="text" id="fInsurance" placeholder="Insurance company name" /></div>
+          <div class="form-group"><label>Referring Physician (if any)</label><input type="text" id="fReferral" placeholder="Dr. name and practice" /></div>
+          <div class="form-group"><label>Preferred Appointment Window</label><input type="text" id="fDate" placeholder="e.g., ASAP, or week of March 10" /></div>
+          <div class="form-group"><label>Additional Notes</label><textarea id="fNotes" placeholder="Describe your symptoms or relevant medical history…"></textarea></div>
+          <button class="btn form-submit" onclick="submitAppt()">Submit Appointment Request</button>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <div style="font-size:2.5rem;margin-bottom:12px">✓</div>
+          <div>Thank you! Your request has been received.</div>
+          <div style="font-weight:400;font-size:0.88rem;margin-top:10px;opacity:0.9">Our scheduling team will contact you within one business day. If this is urgent, please call us directly at 217-528-7541.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-name">Springfield Clinic</div>
+        <div class="brand-sub">Vascular Surgery · Vein Health · Vascular Medicine</div>
+        <p>Providing expert vascular, vein, and endovascular care to central and western Illinois since 1939. Our board-certified team combines advanced technology with compassionate, patient-centered care across 12+ locations.</p>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#vein">Vein Treatments</a></li>
+          <li><a href="#procedures">Endovascular Surgery</a></li>
+          <li><a href="#procedures">EVAR / Stenting</a></li>
+          <li><a href="#procedures">Geniculate Artery Embolization</a></li>
+          <li><a href="#procedures">Prostatic Artery Embolization</a></li>
+          <li><a href="#procedures">Uterine Artery Embolization</a></li>
+          <li><a href="#procedures">Renal Denervation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Patients</h5>
+        <ul>
+          <li><a href="#appointment">Request Appointment</a></li>
+          <li><a href="#assessments">Vascular Risk Assessments</a></li>
+          <li><a href="https://28977-1.portal.athenahealth.com/" target="_blank">Patient Portal</a></li>
+          <li><a href="#">Insurance &amp; Billing</a></li>
+          <li><a href="#">Patient Education</a></li>
+          <li><a href="#">Preparing for Surgery</a></li>
+          <li><a href="#">Bill Pay</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:2175287541">Vascular Surgery: 217-528-7541</a></li>
+          <li><a href="tel:2172809156">Vein Clinic: 217-280-9156</a></li>
+          <li><a href="tel:3098331733">Vascular Medicine: 309-833-1733</a></li>
+          <li><a href="#">800 North 1st St, Floor 4</a></li>
+          <li><a href="#">Springfield, IL 62702</a></li>
+          <li><a href="#">Mon–Fri 8 AM – 5 PM</a></li>
+          <li style="margin-top:10px"><a href="https://www.springfieldclinic.com" target="_blank">springfieldclinic.com ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Springfield Clinic. All rights reserved.</span>
+      <span>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Non-Discrimination</a>
+        <a href="#">HIPAA Notice</a>
+        <a href="#">Terms of Use</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── STICKY CTA ── -->
+<div class="sticky-cta">
+  <a href="tel:2175287541" class="btn btn-yellow" style="font-size:0.8rem;padding:10px 16px">📞 217-528-7541</a>
+  <a href="#appointment" class="btn btn-blue" style="font-size:0.8rem;padding:10px 16px">Schedule Visit</a>
+</div>
+
+<!-- ── JAVASCRIPT ── -->
+<script>
+/* TAB SWITCHER */
+function switchTab(id) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  const map = {vein:0,gae:1,renal:2,pae:3,uae:4,evar:5};
+  document.querySelectorAll('.tab-btn')[map[id]].classList.add('active');
+}
+
+/* FADE-IN OBSERVER */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+/* ASSESSMENT TAB SWITCHER */
+function switchAssess(id) {
+  document.querySelectorAll('.assess-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.assess-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('assess-' + id).classList.add('active');
+  document.getElementById('atab-' + id).classList.add('active');
+}
+
+/* ═══════════════════════════════
+   GENERIC QUIZ ENGINE
+═══════════════════════════════ */
+const quizDefs = {
+  vein: {
+    data: [
+      { q: "Do you experience aching, heaviness, or tiredness in your legs—especially toward the end of the day?", opts: ["Never","Occasionally (1–2×/week)","Often (3–5×/week)","Almost every day"], scores:[0,1,2,3] },
+      { q: "Do you notice visible blue or purple twisted veins on your legs?", opts:["No visible veins","A few small spider veins","Moderate varicose veins","Prominent, bulging varicose veins"], scores:[0,1,2,3] },
+      { q: "Do your legs swell, especially around the ankles, during the day?", opts:["No swelling","Mild swelling at day's end","Moderate swelling most days","Significant persistent swelling"], scores:[0,1,2,3] },
+      { q: "Do you experience leg cramps or restless legs—particularly at night?", opts:["Rarely or never","Occasionally","Frequently","Nightly or near-nightly"], scores:[0,1,2,3] },
+      { q: "Have you noticed skin changes on your legs such as discoloration, hardening, or itching?", opts:["No skin changes","Mild itching only","Skin discoloration or eczema-like patches","Hardened skin or ulcers"], scores:[0,1,3,4] },
+      { q: "Do symptoms improve when you elevate your legs?", opts:["I don't have symptoms","Yes, elevation helps significantly","Partial relief only","No change with elevation"], scores:[0,2,1,0] },
+      { q: "Do you have a family history of varicose veins, DVT, or blood clots?", opts:["No known history","One parent or sibling","Multiple family members","Yes, and I've had clots myself"], scores:[0,1,2,3] },
+      { q: "Have you ever been diagnosed with a blood clot (DVT or PE), or do you take blood thinners?", opts:["No","DVT in the past, resolved","Currently being treated","Yes — on long-term anticoagulation"], scores:[0,2,3,3] },
+      { q: "How would you rate your daily physical activity level?", opts:["Very active (exercise daily)","Moderately active (3–4×/week)","Lightly active (occasional walks)","Mostly sedentary"], scores:[0,0,1,2] },
+      { q: "Has leg pain or vein symptoms caused you to miss work, activities, or exercise?", opts:["Never","Rarely","Sometimes","Frequently impacts quality of life"], scores:[0,1,2,3] }
+    ],
+    results: [
+      { max:15, score:"Low Risk", label:"Low Vein Disease Risk", msg:"Your responses suggest minimal vein symptoms at this time. Stay active and maintain a healthy weight. Annual screenings are recommended if you have a family history of vascular disease." },
+      { max:35, score:"Mild", label:"Mild Venous Symptoms", msg:"You have some symptoms suggesting early venous insufficiency. Lifestyle changes—regular walking, compression socks, leg elevation—can help. A vein specialist consultation can rule out underlying conditions." },
+      { max:60, score:"Moderate", label:"Moderate Vein Disease — Evaluation Recommended", msg:"Your symptom profile is consistent with moderate chronic venous insufficiency. We recommend a vascular ultrasound evaluation. Most treatments are covered by insurance." },
+      { max:999, score:"High", label:"Significant Vein Disease — Consultation Advised", msg:"Your responses indicate significant venous symptoms warranting prompt evaluation by a vascular specialist. Untreated venous disease can progress to skin changes, ulcers, and blood clots. Effective, minimally invasive treatments are available." }
+    ]
+  },
+
+  aaa: {
+    data: [
+      { q: "What is your age?", opts:["Under 55","55–64","65–74","75 or older"], scores:[0,1,2,3] },
+      { q: "Have you ever smoked cigarettes (even in the past)?", opts:["Never smoked","Former smoker (quit 10+ years ago)","Former smoker (quit <10 years ago)","Current smoker"], scores:[0,1,2,3] },
+      { q: "Do you have high blood pressure (hypertension)?", opts:["No","Controlled with medication","Borderline / pre-hypertension","Yes, uncontrolled or difficult to manage"], scores:[0,1,1,2] },
+      { q: "Do you have a family history of aortic aneurysm or sudden vascular death in a close relative?", opts:["No known history","One distant relative","One parent or sibling","Multiple first-degree relatives"], scores:[0,1,2,3] },
+      { q: "Have you ever been told you have atherosclerosis (hardening of the arteries) or coronary artery disease?", opts:["No","Not sure","Possible / borderline","Yes, confirmed diagnosis"], scores:[0,0,1,2] },
+      { q: "Have you noticed a pulsating feeling in your abdomen, or been told you have a pulsating abdominal mass?", opts:["No","Occasionally and not sure what it is","Yes, have noticed this","Yes, and I'm very concerned"], scores:[0,1,2,4] },
+      { q: "Do you have high cholesterol or take cholesterol-lowering medication?", opts:["No and levels are normal","Borderline cholesterol","Yes, managed with diet/medication","Yes, difficult to control"], scores:[0,0,1,2] },
+      { q: "What is your sex assigned at birth? (Men have ~6x higher risk of AAA)", opts:["Female","Male"], scores:[0,2] }
+    ],
+    results: [
+      { max:10, score:"Lower Risk", label:"Lower AAA Risk Profile", msg:"Your responses suggest a lower risk profile for abdominal aortic aneurysm at this time. Maintaining healthy blood pressure, avoiding smoking, and keeping cholesterol in check are the best preventive steps. Talk to your doctor if you have any concerns." },
+      { max:17, score:"Moderate Risk", label:"Moderate Risk — Screening Recommended", msg:"You have several risk factors associated with aortic aneurysm. One-time AAA screening ultrasound is recommended—it's fast, painless, and non-invasive. The U.S. Preventive Services Task Force recommends screening for men aged 65–75 who have ever smoked." },
+      { max:999, score:"High Risk", label:"High Risk — Prompt Evaluation Advised", msg:"Your responses indicate significant risk factors for aortic aneurysm. We strongly recommend a vascular evaluation and abdominal ultrasound screening. AAA is largely silent until rupture—early detection is life-saving. Please contact our office to schedule." }
+    ]
+  },
+
+  carotid: {
+    data: [
+      { q: "Have you ever had a stroke, TIA (transient ischemic attack), or 'mini-stroke'?", opts:["No","Not sure — had a brief episode","TIA or suspected TIA","Yes, confirmed stroke"], scores:[0,1,3,4] },
+      { q: "Do you have high blood pressure (hypertension)?", opts:["No","Controlled well with medication","Borderline or mildly elevated","Yes, uncontrolled"], scores:[0,1,1,2] },
+      { q: "Do you have diabetes?", opts:["No","Pre-diabetes / borderline","Yes, well controlled","Yes, poorly controlled"], scores:[0,1,1,2] },
+      { q: "Do you smoke or have you smoked in the past?", opts:["Never","Former smoker (quit 10+ years ago)","Former smoker (quit <10 years ago)","Current smoker"], scores:[0,1,2,3] },
+      { q: "Have you ever experienced sudden temporary vision loss, double vision, or trouble seeing in one eye?", opts:["Never","Once, briefly, years ago","Occasionally","Yes — recently or more than once"], scores:[0,1,2,4] },
+      { q: "Have you experienced sudden weakness, numbness, or tingling on one side of your face, arm, or leg?", opts:["Never","Once very briefly and it passed","Occasionally","Yes — recently or it lasted more than a few minutes"], scores:[0,1,2,4] },
+      { q: "Do you have high cholesterol, coronary artery disease, or a history of heart attack?", opts:["No","Borderline cholesterol only","High cholesterol managed with medication","Yes, CAD or prior heart attack"], scores:[0,1,1,2] },
+      { q: "Do you have a family history of stroke, carotid disease, or early heart attack?", opts:["No known history","One distant relative","One parent or sibling","Multiple first-degree relatives"], scores:[0,1,2,3] },
+      { q: "Have you been told you have a carotid bruit (a whooshing sound in your neck that a doctor heard)?", opts:["No","Not sure","Possibly — something was noted","Yes, confirmed carotid bruit"], scores:[0,0,2,3] }
+    ],
+    results: [
+      { max:8, score:"Lower Risk", label:"Lower Carotid Disease Risk", msg:"Your responses suggest a lower current risk profile for carotid artery disease. Controlling blood pressure, cholesterol, and avoiding smoking are the best preventive measures. If you ever experience sudden neurologic symptoms, seek emergency care immediately." },
+      { max:16, score:"Moderate Risk", label:"Moderate Risk — Evaluation Recommended", msg:"You have several risk factors for carotid artery disease. We recommend a carotid ultrasound evaluation to assess for any narrowing. Carotid artery stenosis is a leading cause of preventable stroke, and treatment options are very effective when detected early." },
+      { max:999, score:"High Risk", label:"High Risk — Urgent Evaluation Advised", msg:"Your responses indicate significant risk factors or possible symptoms of carotid artery disease or prior cerebrovascular events. Please schedule a vascular evaluation promptly. If you are currently experiencing stroke symptoms (sudden weakness, face drooping, speech difficulty), call 911 immediately." }
+    ]
+  }
+};
+
+const quizStates = {};
+['vein','aaa','carotid'].forEach(id => {
+  quizStates[id] = { current: 0, answers: [], scores: [] };
+});
+
+function renderQ(id) {
+  const state = quizStates[id];
+  const data = quizDefs[id].data;
+  const i = state.current, total = data.length;
+  document.getElementById(id+'-fill').style.width = (i/total*100) + '%';
+  document.getElementById(id+'-counter').textContent = `Question ${i+1} of ${total}`;
+  document.getElementById(id+'-q').textContent = data[i].q;
+  const aDiv = document.getElementById(id+'-answers');
+  aDiv.innerHTML = '';
+  data[i].opts.forEach((opt, j) => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-ans-btn' + (state.answers[i] === j ? ' selected' : '');
+    btn.textContent = opt;
+    btn.onclick = () => { state.answers[i] = j; state.scores[i] = data[i].scores[j]; renderQ(id); };
+    aDiv.appendChild(btn);
+  });
+  document.getElementById(id+'-prev').style.visibility = i === 0 ? 'hidden' : 'visible';
+  document.getElementById(id+'-next').textContent = i === total - 1 ? 'See Results →' : 'Next →';
+}
+
+function qNext(id) {
+  const state = quizStates[id];
+  if (state.answers[state.current] === undefined) {
+    const aDiv = document.getElementById(id+'-answers');
+    aDiv.style.outline = '2px solid var(--sc-yellow)';
+    setTimeout(() => aDiv.style.outline = '', 700);
+    return;
+  }
+  if (state.current < quizDefs[id].data.length - 1) { state.current++; renderQ(id); }
+  else showQResult(id);
+}
+function qPrev(id) { if (quizStates[id].current > 0) { quizStates[id].current--; renderQ(id); } }
+
+function showQResult(id) {
+  const state = quizStates[id];
+  const total = state.scores.reduce((a,b) => a+(b||0), 0);
+  const maxScore = quizDefs[id].data.reduce((a,q) => a + Math.max(...q.scores), 0);
+  const pct = Math.round((total/maxScore)*100);
+  document.getElementById(id+'-fill').style.width = '100%';
+  document.getElementById(id+'-body').style.display = 'none';
+  const rp = document.getElementById(id+'-result');
+  rp.style.display = 'block';
+  document.getElementById(id+'-score').textContent = pct + '%';
+  const results = quizDefs[id].results;
+  let r = results[results.length - 1];
+  for (const res of results) { if (pct <= res.max) { r = res; break; } }
+  document.getElementById(id+'-label').textContent = r.label;
+  document.getElementById(id+'-msg').textContent = r.msg;
+}
+
+function qRestart(id) {
+  quizStates[id] = { current: 0, answers: [], scores: [] };
+  document.getElementById(id+'-body').style.display = 'block';
+  document.getElementById(id+'-result').style.display = 'none';
+  renderQ(id);
+}
+
+// Init all quizzes
+['vein','aaa','carotid'].forEach(id => renderQ(id));
+
+
+/* ═══════════════════════════════
+   PAD WALKING GAME
+═══════════════════════════════ */
+const padCheckpoints = [
+  {
+    dist: 100,
+    q: "When you walk, do your calves, thighs, or buttocks cramp up?",
+    opts: [
+      { text: "No cramping at all", risk: 0 },
+      { text: "Mild tightness occasionally", risk: 1 },
+      { text: "Yes — cramping that makes me slow down", risk: 2 },
+      { text: "Yes — I have to stop completely to rest", risk: 3 }
+    ],
+    fact: "Cramping that starts with walking and stops at rest is called 'claudication' — a classic PAD symptom. Reduced blood flow causes muscle ischemia during activity."
+  },
+  {
+    dist: 250,
+    q: "How do your feet or toes look and feel at rest?",
+    opts: [
+      { text: "Normal color and temperature", risk: 0 },
+      { text: "Sometimes feel cold, especially at night", risk: 1 },
+      { text: "Often pale, blue-tinged, or cold", risk: 2 },
+      { text: "Persistent color change, numbness, or pain at rest", risk: 3 }
+    ],
+    fact: "Cold, discolored feet at rest indicate significantly reduced circulation — this is called 'rest pain' or 'critical limb ischemia' in severe PAD cases."
+  },
+  {
+    dist: 500,
+    q: "Have you had any slow-healing wounds, sores, or ulcers on your legs or feet?",
+    opts: [
+      { text: "No wounds or sores", risk: 0 },
+      { text: "Minor scrapes that healed slowly", risk: 1 },
+      { text: "A sore that took weeks or months to heal", risk: 2 },
+      { text: "Non-healing ulcer or wound currently present", risk: 3 }
+    ],
+    fact: "Non-healing wounds on the feet or lower legs are a serious sign of PAD. Without adequate blood flow, even minor injuries can progress to serious infections."
+  },
+  {
+    dist: 750,
+    q: "Do you have any of these known PAD risk factors?",
+    opts: [
+      { text: "None of the below", risk: 0 },
+      { text: "Smoker or former smoker only", risk: 1 },
+      { text: "Diabetes AND/OR high blood pressure", risk: 2 },
+      { text: "Multiple: smoking + diabetes + high cholesterol", risk: 3 }
+    ],
+    fact: "Smoking is the #1 modifiable risk factor for PAD. Diabetes, high cholesterol, and hypertension dramatically multiply the risk. Managing these conditions slows PAD progression."
+  }
+];
+
+let padState = {
+  distance: 0,
+  maxDistance: 1000,
+  running: false,
+  stepSize: 60,
+  cpIndex: 0,
+  waitingForCp: false,
+  totalRisk: 0,
+  answers: [],
+  interval: null
+};
+
+function padUpdateUI() {
+  const pct = padState.distance / padState.maxDistance;
+  document.getElementById('padMeterFill').style.width = (pct * 100) + '%';
+  document.getElementById('padDistLabel').textContent = padState.distance + 'm';
+  const walkerPct = 2 + pct * 90;
+  document.getElementById('padWalker').style.left = walkerPct + '%';
+}
+
+function padStep() {
+  if (padState.waitingForCp) return;
+  if (!padState.running) {
+    padState.running = true;
+    document.getElementById('padBtnLabel').textContent = '🚶 Keep Walking';
+  }
+
+  // Advance distance
+  const newDist = Math.min(padState.distance + padState.stepSize, padState.maxDistance);
+  padState.distance = newDist;
+  padUpdateUI();
+
+  // Check for checkpoint
+  const nextCp = padCheckpoints[padState.cpIndex];
+  if (nextCp && padState.distance >= nextCp.dist) {
+    padState.waitingForCp = true;
+    document.getElementById('padStepBtn').disabled = true;
+    showPadCheckpoint(padState.cpIndex);
+    return;
+  }
+
+  // Check for finish
+  if (padState.distance >= padState.maxDistance) {
+    padFinish();
+  }
+}
+
+function showPadCheckpoint(idx) {
+  const cp = padCheckpoints[idx];
+  document.getElementById('padCpQText').textContent = cp.q;
+  const aDiv = document.getElementById('padCpAnswers');
+  aDiv.innerHTML = '';
+  cp.opts.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'pad-cp-ans' + (opt.risk >= 2 ? ' high-risk' : '');
+    btn.textContent = opt.text;
+    btn.onclick = () => {
+      padState.totalRisk += opt.risk;
+      padState.answers.push({ cp: idx, risk: opt.risk });
+      document.getElementById('padCurrentFact').innerHTML = '<strong>💡 Did you know?</strong><br>' + cp.fact;
+      document.getElementById('padCpQuestion').style.display = 'none';
+      document.getElementById('pad-cp' + (idx+1) === 'pad-cp5' ? '' : (idx+1)).classList && document.querySelector('#padTrack .pad-cp:nth-child('+(idx+1)+')') && document.querySelector('#padTrack .pad-cp:nth-child('+(idx+1)+')').classList.add('passed');
+      padState.cpIndex++;
+      padState.waitingForCp = false;
+      document.getElementById('padStepBtn').disabled = false;
+      // Mark checkpoint as passed
+      const cpEl = document.getElementById('cp'+(idx+1));
+      if (cpEl) cpEl.classList.add('passed');
+      // If this was the last cp and we're at/past 750, check if at finish
+      if (padState.distance >= padState.maxDistance) padFinish();
+    };
+    aDiv.appendChild(btn);
+  });
+  document.getElementById('padCpQuestion').style.display = 'block';
+}
+
+function padFinish() {
+  padState.running = false;
+  document.getElementById('padStepBtn').disabled = true;
+  document.getElementById('padCpQuestion').style.display = 'none';
+
+  const risk = padState.totalRisk;
+  let emoji, dist, label, msg;
+  dist = padState.distance + 'm completed';
+
+  if (risk === 0) {
+    emoji = '🏆'; label = "Excellent — Low PAD Risk";
+    msg = "Your responses suggest a low current risk profile for PAD. Keep walking, stay active, and avoid smoking. An ABI (ankle-brachial index) test is a painless way to confirm healthy circulation if you ever have concerns.";
+  } else if (risk <= 3) {
+    emoji = '✅'; label = "Mild Risk — Stay Vigilant";
+    msg = "You have mild indicators that warrant monitoring. A simple ABI (ankle-brachial index) screening with our vascular team can quickly assess your circulation. Lifestyle changes including walking regularly and controlling risk factors make a real difference.";
+  } else if (risk <= 7) {
+    emoji = '⚠️'; label = "Moderate PAD Risk — Evaluation Recommended";
+    msg = "Your symptoms and risk factors are consistent with possible peripheral artery disease. We recommend a vascular evaluation including an ABI test and possible imaging. PAD is very treatable — early intervention prevents progression to serious complications.";
+  } else {
+    emoji = '🚨'; label = "High PAD Risk — Prompt Evaluation Advised";
+    msg = "Your responses indicate significant symptoms and risk factors for PAD. Please schedule a vascular evaluation soon. Symptoms like rest pain, non-healing wounds, or severe claudication require prompt medical attention to preserve limb health and function.";
+  }
+
+  document.getElementById('padResultEmoji').textContent = emoji;
+  document.getElementById('padResultDist').textContent = dist;
+  document.getElementById('padResultLabel').textContent = label;
+  document.getElementById('padResultMsg').textContent = msg;
+  document.getElementById('padResult').style.display = 'block';
+  document.getElementById('padTrack').style.opacity = '0.5';
+  document.getElementById('padControls') && (document.getElementById('padControls').style.display = 'none');
+}
+
+function padReset() {
+  padState = { distance:0, maxDistance:1000, running:false, stepSize:60, cpIndex:0, waitingForCp:false, totalRisk:0, answers:[], interval:null };
+  document.getElementById('padMeterFill').style.width = '0%';
+  document.getElementById('padDistLabel').textContent = '0m';
+  document.getElementById('padWalker').style.left = '2%';
+  document.getElementById('padBtnLabel').textContent = '▶ Start Walking';
+  document.getElementById('padStepBtn').disabled = false;
+  document.getElementById('padCpQuestion').style.display = 'none';
+  document.getElementById('padResult').style.display = 'none';
+  document.getElementById('padTrack').style.opacity = '1';
+  document.getElementById('padCurrentFact').innerHTML = '<strong>How to play:</strong> Tap the walk button to advance. Answer symptom checkpoints along the way. Your final distance and answers will reveal your PAD risk level.';
+  [1,2,3,4].forEach(n => { const el = document.getElementById('cp'+n); if(el) el.classList.remove('passed'); });
+}
+
+/* APPOINTMENT FORM */
+function submitAppt() {
+  const first = document.getElementById('fFirst').value.trim();
+  const last = document.getElementById('fLast').value.trim();
+  const phone = document.getElementById('fPhone').value.trim();
+  const reason = document.getElementById('fReason').value;
+  if (!first || !last || !phone || !reason) {
+    alert('Please complete all required fields: First Name, Last Name, Phone, and Reason for Visit.');
+    return;
+  }
+  document.getElementById('apptFormWrap').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+
+/* SMOOTH SCROLL */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href').slice(1);
+    const el = document.getElementById(id);
+    if (el) { e.preventDefault(); el.scrollIntoView({ behavior:'smooth', block:'start' }); }
+  });
+});
+</script>
+</body>
+</html>
